@@ -104,7 +104,7 @@
         height: document.documentElement.clientHeight
       }
 
-    # Returns an object with x and y 
+    # Returns an object with x and y
     mousePosition: (e) ->
       return null unless e?
       x: e.pageX, y: e.pageY
@@ -119,10 +119,10 @@
       }
 
     # Observe given eventName
-    observe: (element, eventName, observer) -> $(element).bind eventName, observer
+    observe: (element, eventName, observer) -> $(element).on eventName, observer
 
     # Stop observing event
-    stopObserving: (element, eventName, observer) -> $(element).unbind eventName, observer
+    stopObserving: (element, eventName, observer) -> $(element).off eventName, observer
 
     # Perform an AJAX request and call the appropriate callbacks.
     ajax: (options) ->
